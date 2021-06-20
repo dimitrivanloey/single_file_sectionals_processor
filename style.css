@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap');
+
+html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Source Sans Pro', sans-serif;
+            overflow: auto;
+        }
+
+        h2 {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+        }
+
+        .all {
+            margin: 0.5rem;
+            margin-top: -1.7rem;
+        }
+
+        .header1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .race-logo {
+            margin: 0;
+            margin-top: 15px;
+
+        }
+
+        .title-date-container {
+            color: rgb(38, 33, 97);
+            margin-bottom: 0;
+            padding-top: 35px;
+            padding-left: 0;
+            margin-left: 0;
+            margin-bottom: 0;
+            margin-bottom: 0;
+
+        }
+
+        .lower-banner {
+            margin: 10px;
+        }
+
+        .racingTV-logo {
+            margin: 0;
+            margin-right: 0;
+            margin-bottom: -20px;
+        }
+
+        .times-accuracy {
+            color: grey;
+            margin-left: 0;
+        }
+
+        .email {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 17px;
+            right: 0;
+        }
+
+        a:link {
+            color: rgb(38, 33, 97);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: rgb(38, 33, 97);
+        }
+
+        .horses {
+            font-family: 'Source Sans Pro', sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .horses td,
+        .horses th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .horses tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .horses tr:hover {
+            background-color: #ddd;
+        }
+
+        .horses th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #58575c;
+            color: white;
+        }
+
+
+        td.runnername {
+            column-width: 200px;
+        }
+           td.statcat {
+            display: none;
+        }
+
+        th.statcat {
+            display: none;
+        }
+        th.runnernumber { display: none;}
+        td.runnernumber { display: none;}
