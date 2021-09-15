@@ -1,4 +1,4 @@
-#!/Users/dimitrivanloey/PycharmProjects/single_file_sectionals_processor/venv/bin/python
+#!/Users/dimitrivanloey/PycharmProjects/processing_all_sectionals/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

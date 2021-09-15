@@ -1,16 +1,24 @@
 import pandas as pd
 import numpy as np
+import webbrowser
+import os
 
-VENUE = 'hamilton'
+VENUE = 'sandown'
 
-DAY = '16'
-MONTH = '06'
+DAY = '10'
+MONTH = '09'
 
-HOURS_LIST = ['1405', '1515']
-TITLES_LIST = ['Title 1', 'Title 2']
+HOURS_LIST = ['1300', '1330', '1400', '1430', '1500', '1535']
+TITLES_LIST = ["0m 5f 10y Paul Ferguson Memorial EBF Maiden Stakes (GBB Race)",
+               "0m 5f 10y 1account ID Handicap",
+               "1m 0f 0y IRE Incentive Scheme EBF Fillies' Novice Stakes (GBB Race)",
+               "1m 0f 0y 1account KYC Handicap",
+               "0m 7f 0y Follow Raceday On Instagram Handicap",
+               "0m 7f 0y Every Race Live On Racing TV Fillies' Handicap"
+               ]
 
-FILE = f'HAM_{DAY}{MONTH}_sheets.xlsx'
-DATE = '6th February 2021'
+FILE = f'SAN_{DAY}{MONTH}.xlsx'
+DATE = '10th September 2021'
 
 for n in range(len(HOURS_LIST)):
     df = pd.read_excel(FILE, sheet_name=HOURS_LIST[n])
@@ -19,6 +27,8 @@ for n in range(len(HOURS_LIST)):
     html_table = new_df.to_html(index=False, classes="horses", border=0)
 
     TIME = HOURS_LIST[n]
+    HH = TIME[0:2]
+    MM = TIME[2:4]
 
     html_string = '''
     <!DOCTYPE html>
@@ -33,11 +43,11 @@ for n in range(len(HOURS_LIST)):
 <body>
    <div class="all">
        <div class="header1">
-           <div class="race-logo"><img src="logos/{venue}.png" alt="Kempton Logo" style="width:180px;height:80px;">
+           <div class="race-logo"><img src="logos/{venue}.png" alt="{venue} Logo" style="width:180px;height:80px;">
            </div>
            <div class="title-date-container">
                <h2>{title}</h2>
-               <h3>{date}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time: {time}</h3>
+               <h3>{date}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time: {hh}:{mm}</h3>
            </div>
            <div class="racingTV-logo"><img src="racingTV.png" alt="Racing TV logo"
                style="width:300px;height:81px;">
@@ -65,9 +75,10 @@ for n in range(len(HOURS_LIST)):
     with open(f'{VENUE}_{HOURS_LIST[n]}.html', 'w') as website_file:
         website_file.write(
             html_string.format(table=new_df.to_html(index=False, classes="horses", border=0), title=TITLES_LIST[n],
-                               date=DATE, time=TIME, venue=VENUE))
+                               date=DATE, time=TIME, venue=VENUE, hh=HH, mm=MM))
 
-
+    filename = 'file:///' + os.getcwd() + '/' + f'{VENUE}_{HOURS_LIST[n]}.html'
+    webbrowser.open_new_tab(filename)
 
 
 
