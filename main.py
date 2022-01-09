@@ -5,20 +5,19 @@ import os
 
 VENUE = 'sandown'
 
-DAY = '10'
-MONTH = '09'
+DAY = '08'
+MONTH = '01'
 
-HOURS_LIST = ['1300', '1330', '1400', '1430', '1500', '1535']
-TITLES_LIST = ["0m 5f 10y Paul Ferguson Memorial EBF Maiden Stakes (GBB Race)",
-               "0m 5f 10y 1account ID Handicap",
-               "1m 0f 0y IRE Incentive Scheme EBF Fillies' Novice Stakes (GBB Race)",
-               "1m 0f 0y 1account KYC Handicap",
-               "0m 7f 0y Follow Raceday On Instagram Handicap",
-               "0m 7f 0y Every Race Live On Racing TV Fillies' Handicap"
-               ]
+HOURS_LIST = ['1205', '1240', '1315', '1350', '1500', '1535']
+TITLES_LIST = ["1m 7f 216y Unibet Extra Place Races Every Day Juvenile Hurdle (GBB Race)",
+               "2m 3f 173y Unibet 3 Uniboosts A Day Mares' Hurdle (Listed) (GBB Race)",
+               "2m 4f 10y Read Nicky Henderson's Unibet Blog Handicap Chase",
+               "1m 7f 119y Unibet Horserace Betting Operator Of The Year Handicap Chase (GBB Race)",
+               "3m 0f 37y Unibet Veterans' Handicap Chase (Final Of The 2021 Veterans Chase Series)",
+               "1m 7f 216y Unibet Casino Deposit 10 Get 40 Handicap Hurdle (GBB Race)"]
 
 FILE = f'SAN_{DAY}{MONTH}.xlsx'
-DATE = '10th September 2021'
+DATE = '8th January 2022'
 
 for n in range(len(HOURS_LIST)):
     df = pd.read_excel(FILE, sheet_name=HOURS_LIST[n])
